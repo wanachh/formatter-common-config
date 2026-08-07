@@ -19,10 +19,14 @@ const settings = {
 };
 
 const extensions = {
-  recommendations: ['biomejs.biome'],
+  recommendations: [
+    'biomejs.biome',
+  ],
 };
 
-await mkdir(vscodeDir, { recursive: true });
+await mkdir(vscodeDir, {
+  recursive: true,
+});
 await writeFile(resolve(vscodeDir, 'settings.json'), `${JSON.stringify(settings, null, 2)}\n`);
 await writeFile(resolve(vscodeDir, 'extensions.json'), `${JSON.stringify(extensions, null, 2)}\n`);
 await writeFile(biomeConfigTarget, await readFile(biomeConfigSource));
