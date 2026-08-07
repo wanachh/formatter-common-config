@@ -1,11 +1,17 @@
+import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const projectRoot = resolve(process.cwd());
-const configRoot = resolve(projectRoot, 'config');
+const candidateSources = [
+  resolve(projectRoot, 'config', 'biome.shared.json'),
+  resolve(projectRoot, 'formatter-common-config', 'biome.shared.json'),
+  resolve(projectRoot, 'config', 'biome.json'),
+  resolve(projectRoot, 'formatter-common-config', 'biome.json'),
+];
 const vscodeDir = resolve(projectRoot, '.vscode');
-const biomeConfigSource = resolve(configRoot, 'biome.shared.json');
 const biomeConfigTarget = resolve(projectRoot, 'biome.json');
+const biomeConfigSource = candidateSources.find((path) => existsSync(path));
 
 const settings = {
   'editor.formatOnSave': true,
@@ -23,6 +29,10 @@ const extensions = {
     'biomejs.biome',
   ],
 };
+
+if (!biomeConfigSource) {
+  throw new Error('Could not find a shared Biome config in config/ or formatter-common-config/.');
+}
 
 await mkdir(vscodeDir, {
   recursive: true,
