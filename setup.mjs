@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 const projectRoot = resolve(process.cwd());
 const configRoot = resolve(projectRoot, 'config');
 const vscodeDir = resolve(projectRoot, '.vscode');
-const biomeConfigSource = resolve(configRoot, 'biome.json');
+const biomeConfigSource = resolve(configRoot, 'biome.shared.json');
 const biomeConfigTarget = resolve(projectRoot, 'biome.json');
 
 const settings = {

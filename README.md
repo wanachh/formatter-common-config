@@ -5,7 +5,7 @@ It is designed to be used as a **Git Submodule** in both `.NET` and `JavaScript/
 
 ## Contents
 * `.editorconfig` - Standard rules for C# / .NET projects.
-* `biome.json` - Standard rules for JavaScript, TypeScript, HTML, JSON, etc.
+* `biome.shared.json` - Standard rules for JavaScript, TypeScript, HTML, JSON, etc.
 * `setup.mjs` - Creates VS Code workspace settings for Biome in the consuming repo.
 
 ## How to use
@@ -22,7 +22,7 @@ It is designed to be used as a **Git Submodule** in both `.NET` and `JavaScript/
    ```
 
 3. **For JavaScript Projects:**
-   Use the shared `biome.json` from this submodule and run the shared setup script from the consuming repo root:
+   Use the shared `biome.shared.json` from this submodule and run the shared setup script from the consuming repo root:
    ```bash
    node ./formatter-common-config/setup.mjs
    ```
