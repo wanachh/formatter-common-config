@@ -1,0 +1,9 @@
+{
+  "name": "formatter-common-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Centralized formatting configuration Mother Repo for Biome and EditorConfig",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
