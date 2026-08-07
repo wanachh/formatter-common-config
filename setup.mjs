@@ -10,6 +10,12 @@ const biomeConfigTarget = resolve(projectRoot, 'biome.json');
 const settings = {
   'editor.formatOnSave': true,
   'editor.defaultFormatter': 'biomejs.biome',
+  '[json]': {
+    'editor.defaultFormatter': 'biomejs.biome',
+  },
+  '[jsonc]': {
+    'editor.defaultFormatter': 'biomejs.biome',
+  },
 };
 
 const extensions = {

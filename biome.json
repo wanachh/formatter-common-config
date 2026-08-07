@@ -5,6 +5,7 @@
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
+    "expand": "always",
     "lineEnding": "lf",
     "lineWidth": 100,
     "attributePosition": "auto"
