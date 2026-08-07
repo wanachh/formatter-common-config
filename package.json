@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "Centralized formatting configuration Mother Repo for Biome and EditorConfig",
+  "scripts": {
+    "format": "biome format --write .",
+    "watch": "node watch-format.template.mjs"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   }
