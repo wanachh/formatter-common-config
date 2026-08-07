@@ -19,19 +19,20 @@ const watcherTemplate = resolve(dirname(thisFile), 'watch-format.template.mjs');
 const watcherTarget = resolve(scriptsDir, 'watch-format.mjs');
 
 const settings = {
-  'editor.formatOnSave': true,
-  'editor.defaultFormatter': 'biomejs.biome',
-  '[json]': {
-    'editor.defaultFormatter': 'biomejs.biome',
-  },
-  '[jsonc]': {
-    'editor.defaultFormatter': 'biomejs.biome',
+  'emeraldwalk.runonsave': {
+    commands: [
+      {
+        match: '.*',
+        isAsync: false,
+        cmd: 'npx biome format --write ${file}',
+      },
+    ],
   },
 };
 
 const extensions = {
   recommendations: [
-    'biomejs.biome',
+    'emeraldwalk.runonsave',
   ],
 };
 
@@ -51,7 +52,7 @@ await writeFile(biomeConfigTarget, await readFile(biomeConfigSource));
 
 if (existsSync(watcherTemplate)) {
   await writeFile(watcherTarget, await readFile(watcherTemplate));
-  console.log('✅ scripts/watch-format.mjs created (run "npm run watch" to auto-format on save, no editor extension needed)');
+  console.log('✅ scripts/watch-format.mjs created (optional alternative: "npm run watch", zero VS Code extensions)');
 }
 
-console.log('✅ VS Code workspace settings created for Biome');
+console.log('✅ VS Code workspace configured: install "emeraldwalk.runonsave" once, then Biome formats every file automatically on save');
