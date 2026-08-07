@@ -27,14 +27,5 @@
       "quoteStyle": "single",
       "attributePosition": "auto"
     }
-  },
-  "json": {
-    "formatter": {
-      "enabled": true,
-      "indentStyle": "space",
-      "indentWidth": 2,
-      "lineWidth": 100,
-      "trailingCommas": "none"
-    }
   }
 }
