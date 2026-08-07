@@ -27,4 +27,4 @@ It is designed to be used as a **Git Submodule** in both `.NET` and `JavaScript/
    node ./formatter-common-config/setup.mjs
    ```
 
-   This creates `.vscode/settings.json` and `.vscode/extensions.json` so save-time formatting follows Biome.
+   This creates `.vscode/settings.json`, `.vscode/extensions.json`, and copies `biome.json` to the consuming repo root so save-time formatting follows Biome.
